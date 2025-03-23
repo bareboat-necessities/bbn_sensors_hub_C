@@ -5,7 +5,17 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 
+#include <ReactESP.h>  // https://github.com/mairas/ReactESP
+
+using namespace reactesp;
+ReactESP app;
+
+#include "NmeaXDR.h"
+#include "Nmea0183Msg.h"
 #include "PulseGenerator.h"
+#include "PulseCounter.h"
+#include "ResistanceSensor.h"
+#include "Max6675.h"
 
 // Configuration
 #define PCNT_H_LIMIT 10000          // Upper limit for the pulse counter
