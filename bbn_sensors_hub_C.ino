@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <driver/pulse_cnt.h>
 #include <driver/gpio.h>
 #include <esp_timer.h>
 #include <freertos/FreeRTOS.h>
