@@ -7,13 +7,9 @@
 
 #include <ReactESP.h>  // https://github.com/mairas/ReactESP
 
-using namespace reactesp;
-ReactESP app;
-
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
-#include "PulseGenerator.h"
-#include "PulseCounter.h"
+
 #include "ResistanceSensor.h"
 #include "Max6675.h"
 
@@ -23,12 +19,19 @@ ReactESP app;
 #define PULSES_PER_REVOLUTION 2     // Number of pulses per engine revolution (PPR)
 #define MEASUREMENT_INTERVAL_MS 250 // Measurement interval in milliseconds
 
+#include "PulseCounter.h"
+
 #define LEDC_OUTPUT_GPIO 7
 #define LEDC_FREQUENCY 100                     // Initial frequency in Hz
+
+#include "PulseGenerator.h"
 
 // Variables
 int64_t last_time = 0;
 int16_t last_count = 0;
+
+using namespace reactesp;
+ReactESP app;
 
 // Function to calculate RPM
 float calculate_rpm() {
