@@ -10,7 +10,7 @@
 #include "Nmea0183Msg.h"
 
 #include "gpio_240_30_ohm_sensor.h"
-#include "Max6675.h"
+#include "gpio_max6675.h"
 
 // Configuration
 #define PCNT_INPUT_GPIO 8           // GPIO pin for pulse input/output
