@@ -15,6 +15,7 @@
 */
 
 #include "gpio_open_flame_ir.h"
+#include "gpio_RPM_sensor.h"
 #include "gpio_max6675.h"
 #include "gpio_240_30_ohm_sensor.h"
 
@@ -32,6 +33,7 @@ void mcu_sensors_scan() {
   i2c_vl53l0x_try_init();
   */
   gpio_open_flame_ir_try_init();
+  gpio_RPM_sensor_try_init();
   gpio_240_30_ohm_try_init();
   gpio_max6675_try_init();
 }
