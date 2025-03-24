@@ -6,6 +6,9 @@
 
 #include <ReactESP.h>  // https://github.com/mairas/ReactESP
 
+using namespace reactesp;
+ReactESP app;
+
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
 
@@ -28,9 +31,6 @@
 // Variables
 int64_t last_time = 0;
 int16_t last_count = 0;
-
-using namespace reactesp;
-ReactESP app;
 
 // Function to calculate RPM
 float calculate_rpm() {
