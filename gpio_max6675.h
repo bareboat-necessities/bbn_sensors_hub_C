@@ -15,9 +15,9 @@ void gpio_max6675_report() {
 }
 
 void gpio_max6675_try_init() {
-  pinMode(thermoSO, INPUT);
-  pinMode(thermoCS, OUTPUT);
-  pinMode(thermoCLK, OUTPUT);
+  //pinMode(thermoSO, INPUT);
+  //pinMode(thermoCS, OUTPUT);
+  //pinMode(thermoCLK, OUTPUT);
   // wait for MAX chip to stabilize
   delay(500);
   // For the MAX6675 to update, you must delay AT LEAST 250ms between reads!
