@@ -16,15 +16,15 @@ ReactESP app;
 #include "gpio_max6675.h"
 
 // Configuration
-#define PCNT_INPUT_GPIO 8           // GPIO pin for pulse input/output
-#define DEBOUNCE_TIME_NS 40         // Debounce time in nanoseconds
-#define PULSES_PER_REVOLUTION 2     // Number of pulses per engine revolution (PPR)
-#define MEASUREMENT_INTERVAL_MS 250 // Measurement interval in milliseconds
+#define PCNT_INPUT_GPIO 8             // GPIO pin for pulse input
+#define DEBOUNCE_TIME_NS 40           // Debounce time in nanoseconds
+#define PULSES_PER_REVOLUTION 2       // Number of pulses per engine revolution (PPR)
+#define MEASUREMENT_INTERVAL_MS 250   // Measurement interval in milliseconds
 
 #include "PulseCounter.h"
 
-#define LEDC_OUTPUT_GPIO 7
-#define LEDC_FREQUENCY 100                     // Initial frequency in Hz
+#define LEDC_OUTPUT_GPIO 7             // GPIO pin for pulse output
+#define LEDC_FREQUENCY 100             // Initial frequency in Hz
 
 #include "PulseGenerator.h"
 
