@@ -14,6 +14,7 @@
 #include "i2c_ina219.h"
 */
 
+#include "gpio_open_flame_ir.h"
 #include "gpio_max6675.h"
 #include "gpio_240_30_ohm_sensor.h"
 
