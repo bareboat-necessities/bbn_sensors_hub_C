@@ -1,4 +1,5 @@
 #include <M5Unified.h>
+#include <Arduino.h>
 #include <Wire.h>
 #include <stdio.h>
 #include <driver/gpio.h>
@@ -75,6 +76,7 @@ void setup() {
 }
 
 void loop() {
+  M5.update();
   app.tick();
   mcu_sensors_update();
   
