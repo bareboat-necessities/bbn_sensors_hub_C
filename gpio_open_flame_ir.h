@@ -4,7 +4,7 @@
 const int open_flame_sensorPin = 2; 
 
 void gpio_open_flame_ir_report() {
-  int sensorValue = digitalRead(sensorPin); // Read the sensor value
+  int sensorValue = digitalRead(open_flame_sensorPin); // Read the sensor value
 
   if (sensorValue == LOW) { // If the sensor detects a flame (LOW)
     Serial.println("Flame Detected!");
