@@ -30,6 +30,7 @@ void mcu_sensors_scan() {
   i2c_bh1750fvi_tr_try_init();
   i2c_vl53l0x_try_init();
   */
+  gpio_open_flame_ir_try_init();
   gpio_240_30_ohm_try_init();
   gpio_max6675_try_init();
 }
