@@ -58,7 +58,7 @@ float calculate_rpm() {
 void setup() {
   auto cfg = M5.config();
   M5.begin(cfg);
-  Wire1.begin(G38, G39, 100000UL);
+  //Wire1.begin(G38, G39, 100000UL);
   Serial.begin(38400);
   gen_nmea0183_msg("$BBTXT,01,01,01,FirmwareTag: %s", firmware_tag);
   mcu_sensors_scan();
