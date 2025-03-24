@@ -9,7 +9,7 @@
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
 
-#include "ResistanceSensor.h"
+#include "gpio_240_30_ohm_sensor.h"
 #include "Max6675.h"
 
 // Configuration
