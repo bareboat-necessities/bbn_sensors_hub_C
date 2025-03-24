@@ -1,3 +1,5 @@
+#include <M5Unified.h>
+#include <Wire.h>
 #include <stdio.h>
 #include <driver/gpio.h>
 #include <esp_timer.h>
@@ -8,6 +10,8 @@
 
 using namespace reactesp;
 ReactESP app;
+
+static const char* firmware_tag = "bbn_sensors_hub_C";
 
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
@@ -22,7 +26,7 @@ ReactESP app;
 
 #include "PulseCounter.h"
 
-#define LEDC_OUTPUT_GPIO 7             // GPIO pin for pulse output
+#define LEDC_OUTPUT_GPIO 8             // GPIO pin for pulse output
 #define LEDC_FREQUENCY 100             // Initial frequency in Hz
 
 #include "PulseGenerator.h"
@@ -51,7 +55,13 @@ float calculate_rpm() {
 }
 
 void setup() {
-
+  auto cfg = M5.config();
+  M5.begin(cfg);
+  Wire1.begin(G38, G39, 100000UL);
+  Serial.begin(38400);
+  gen_nmea0183_msg("$BBTXT,01,01,01,FirmwareTag: %s", firmware_tag);
+  mcu_sensors_scan();
+    
   // Initialize PCNT
   pcnt_init();
 
@@ -65,12 +75,15 @@ void setup() {
 }
 
 void loop() {
+  app.tick();
+  mcu_sensors_update();
+  
   // Delay for the measurement interval
   vTaskDelay(pdMS_TO_TICKS(MEASUREMENT_INTERVAL_MS));
 
   // Calculate and print the RPM
   float rpm = calculate_rpm();
-  if (rpm > 0) {
+  if (rpm >= 0) {
     printf("Measured RPM: %.2f\n", rpm);
 
     // Get the generated frequency from LEDC
@@ -83,4 +96,3 @@ void loop() {
     printf("Error: %.2f RPM\n", error);
   }
 }
-
