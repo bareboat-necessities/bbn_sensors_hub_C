@@ -4,7 +4,7 @@
 #include "ResistanceSensor.h"
 #include "NmeaXDR.h"
 
-#define Resistance_Sensor_GPIO_PIN G8
+#define Resistance_Sensor_GPIO_PIN G1
 
 ResistanceSensor resistanceSens;
 
