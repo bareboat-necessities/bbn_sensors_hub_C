@@ -47,18 +47,10 @@ bool i2c_ina219_begin(Adafruit_INA219 *ina219, TwoWire *wire) {
   if (bus == 1) {
     if (ina219 == &ina219_alt_1) {
       index = 1;
-    } else if (ina219 == &ina219_alt_2) {
-      index = 2;
-    } else if (ina219 == &ina219_alt_3) {
-      index = 3;
     }
   } else {
     if (ina219 == &ina219_1) {
       index = 1;
-    } else if (ina219 == &ina219_2) {
-      index = 2;
-    } else if (ina219 == &ina219_3) {
-      index = 3;
     }
   }
   if (found) {
