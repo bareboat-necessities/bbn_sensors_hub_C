@@ -12,7 +12,7 @@
 pcnt_unit_handle_t pcnt_unit = NULL;
 
 // Function to initialize the PCNT module
-void pcnt_init() {
+void pcnt_init(int pcnt_input_gpio, int64_t debounce_time_ns) {
   // Configure PCNT unit
   pcnt_unit_config_t unit_config = {
     .low_limit = PCNT_L_LIMIT,
@@ -22,7 +22,7 @@ void pcnt_init() {
 
   // Configure PCNT channel
   pcnt_chan_config_t chan_config = {
-    .edge_gpio_num = PCNT_INPUT_GPIO,
+    .edge_gpio_num = pcnt_input_gpio,
     .level_gpio_num = -1, // No level GPIO
   };
   pcnt_channel_handle_t pcnt_chan = NULL;
@@ -34,7 +34,7 @@ void pcnt_init() {
 
   // Set debounce filter
   pcnt_glitch_filter_config_t filter_config = {
-    .max_glitch_ns = DEBOUNCE_TIME_NS,
+    .max_glitch_ns = debounce_time_ns,
   };
   ESP_ERROR_CHECK(pcnt_unit_set_glitch_filter(pcnt_unit, &filter_config));
 
