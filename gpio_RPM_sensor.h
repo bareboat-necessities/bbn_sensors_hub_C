@@ -10,7 +10,7 @@
 
 // Configuration
 #define PCNT_INPUT_GPIO 8             // GPIO pin for pulse input
-#define DEBOUNCE_TIME_NS 40           // Debounce time in nanoseconds
+#define DEBOUNCE_TIME_NS 400          // Debounce time in nanoseconds
 #define PULSES_PER_REVOLUTION 2       // Number of pulses per engine revolution (PPR)
 #define MEASUREMENT_INTERVAL_MS 500   // Measurement interval in milliseconds
 
