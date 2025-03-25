@@ -11,6 +11,7 @@
 #include "i2c_sgp30.h"
 #include "i2c_vl53l0x.h"
 #include "i2c_ina219.h"
+#include "i2c_sht30.h"
 
 #include "gpio_open_flame_ir.h"
 #include "gpio_RPM_sensor.h"
@@ -28,6 +29,7 @@ void mcu_sensors_scan() {
   i2c_sgp30_try_init();
   i2c_bh1750fvi_tr_try_init();
   i2c_vl53l0x_try_init();
+  i2c_sht30_try_init();
 
   gpio_open_flame_ir_try_init();
   gpio_RPM_sensor_try_init();
