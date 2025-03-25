@@ -4,9 +4,11 @@
 const int open_flame_sensorPin = 2; 
 int64_t last_flame_time = 0;
 
+#define FLAME_COUNT_FOR_TRIGGER 1
+
 void gpio_open_flame_ir_report() {
   bool flame = false;
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < FLAME_COUNT_FOR_TRIGGER; i++) {
     int sensorValue = digitalRead(open_flame_sensorPin); // Read the sensor value
     if (sensorValue == LOW) { // If the sensor detects a flame (LOW)
       flame = true;
