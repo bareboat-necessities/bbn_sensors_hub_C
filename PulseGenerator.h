@@ -10,20 +10,20 @@
 #define LEDC_DUTY_RESOLUTION LEDC_TIMER_13_BIT // 13-bit resolution for duty cycle
 
 // Function to initialize the LEDC (PWM) module
-void ledc_init() {
+void ledc_init(int ledc_output_gpio, int ledc_frequency) {
   // Configure LEDC timer
   ledc_timer_config_t ledc_timer = {
     .speed_mode = LEDC_MODE,
     .duty_resolution = LEDC_DUTY_RESOLUTION,
     .timer_num = LEDC_TIMER,
-    .freq_hz = LEDC_FREQUENCY, // Initial frequency
+    .freq_hz = ledc_frequency, // Initial frequency
     .clk_cfg = LEDC_AUTO_CLK,
   };
   ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
 
   // Configure LEDC channel
   ledc_channel_config_t ledc_channel = {
-    .gpio_num = LEDC_OUTPUT_GPIO,
+    .gpio_num = ledc_output_gpio,
     .speed_mode = LEDC_MODE,
     .channel = LEDC_CHANNEL,
     .intr_type = LEDC_INTR_DISABLE,
