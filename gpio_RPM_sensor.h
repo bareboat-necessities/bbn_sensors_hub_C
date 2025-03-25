@@ -10,7 +10,7 @@
 
 // Configuration
 #define PCNT_INPUT_GPIO 8             // GPIO pin for pulse input
-#define DEBOUNCE_TIME_NS 400          // Debounce time in nanoseconds
+#define DEBOUNCE_TIME_NS 1200         // Debounce time in nanoseconds
 #define PULSES_PER_REVOLUTION 3       // Number of pulses per engine revolution (PPR)
 #define MEASUREMENT_INTERVAL_MS 500   // Measurement interval in milliseconds
 
@@ -46,7 +46,8 @@ void gpio_RPM_sensor_report() {
   // Calculate and print the RPM
   float rpm = calculate_rpm();
   if (rpm >= 0) {
-    printf("Measured RPM: %.2f\n", rpm);
+    gen_nmea0183_xdr("$BBXDR,T,%.1f,R,RPM", rpm);
+
     if (gen_test_pulses) {
       // Get the generated frequency from LEDC
       uint32_t generated_freq = ledc_get_freq(LEDC_MODE, LEDC_TIMER);
