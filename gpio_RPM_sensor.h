@@ -1,6 +1,10 @@
 #ifndef gpio_RPM_sensor_h
 #define gpio_RPM_sensor_h
 
+#include <stdio.h>
+#include <driver/gpio.h>
+#include <esp_timer.h>
+
 #include "PulseCounter.h"
 #include "PulseGenerator.h"
 
