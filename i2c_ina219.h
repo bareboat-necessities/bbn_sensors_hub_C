@@ -92,13 +92,17 @@ bool i2c_ina219_try_init(TwoWire *wire) {
   if (wire == &Wire1) {
     found |= i2c_ina219_begin(&ina219_alt_0, &Wire1);
     found |= i2c_ina219_begin(&ina219_alt_1, &Wire1);
-    found |= i2c_ina219_begin(&ina219_alt_2, &Wire1);
-    found |= i2c_ina219_begin(&ina219_alt_3, &Wire1);
+    if (!sht30_found) {
+      found |= i2c_ina219_begin(&ina219_alt_2, &Wire1);
+      found |= i2c_ina219_begin(&ina219_alt_3, &Wire1);
+    }
   } else {
     found |= i2c_ina219_begin(&ina219_0, &Wire); // conflicts with M5Stack Encoder Unit on 0x40 on i2c0
     found |= i2c_ina219_begin(&ina219_1, &Wire);
-    found |= i2c_ina219_begin(&ina219_2, &Wire);
-    found |= i2c_ina219_begin(&ina219_3, &Wire);
+    if (!sht30_found) {
+      found |= i2c_ina219_begin(&ina219_2, &Wire);
+      found |= i2c_ina219_begin(&ina219_3, &Wire);
+    }
   }
   return found;
 }
