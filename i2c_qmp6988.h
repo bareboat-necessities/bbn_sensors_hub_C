@@ -11,6 +11,26 @@
 
 QMP6988 i2c_qmp6988_sensor;
 
+// QMP6988 Chip ID register address
+#define QMP6988_CHIP_ID_REG 0xD1
+
+// Expected Chip ID value for QMP6988
+#define QMP6988_CHIP_ID_VALUE 0x5C
+
+uint8_t i2c_qmp6988_whoami() {
+  // Read the Chip ID register
+  Wire.beginTransmission(QMP6988_SLAVE_ADDRESS_L);
+  Wire.write(QMP6988_CHIP_ID_REG); 
+  Wire.endTransmission(false); // Send a repeated start condition
+
+  // Request 1 byte of data from the sensor
+  Wire.requestFrom(QMP6988_SLAVE_ADDRESS_L, 1);
+  if (Wire.available()) {
+    return Wire.read(); // Read the Chip ID value
+  }
+  return 0xFF; // unknown
+}
+
 void i2c_qmp6988_report() {
   if (i2c_qmp6988_sensor.update()) {
     gen_nmea0183_xdr("$BBXDR,C,%.2f,C,TEMP_QMP6988", i2c_qmp6988_sensor.cTemp);          // C
@@ -21,7 +41,7 @@ void i2c_qmp6988_report() {
 bool i2c_qmp6988_try_init() {
   bool i2c_qmp6988_found = false;
   for (int i = 0; i < 3; i++) {
-    i2c_qmp6988_found = i2c_qmp6988_sensor.begin(&Wire1, QMP6988_SLAVE_ADDRESS_L, G38, G39, 100000UL);
+    i2c_qmp6988_found = (QMP6988_CHIP_ID_VALUE == i2c_qmp6988_whoami()) && i2c_qmp6988_sensor.begin(&Wire1, QMP6988_SLAVE_ADDRESS_L, G38, G39, 100000UL);
     if (i2c_qmp6988_found) {
       break;
     }
