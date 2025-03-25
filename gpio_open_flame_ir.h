@@ -5,9 +5,19 @@ const int open_flame_sensorPin = 2;
 int64_t last_flame_time = 0;
 
 void gpio_open_flame_ir_report() {
-  int sensorValue = digitalRead(open_flame_sensorPin); // Read the sensor value
+  bool flame = false;
+  for (int i = 0; i < 3; i++) {
+    int sensorValue = digitalRead(open_flame_sensorPin); // Read the sensor value
+    if (sensorValue == LOW) { // If the sensor detects a flame (LOW)
+      flame = true;
+    } else {
+      flame = false;
+      break;
+    }
+    delay(3);
+  }
 
-  if (sensorValue == LOW) { // If the sensor detects a flame (LOW)
+  if (flame) { 
     int64_t now = esp_timer_get_time();
     if ((now - last_flame_time) > 1000000) {
       gen_nmea0183_xdr("$BBXDR,S,1,,OPEN_FLAME", 1);
