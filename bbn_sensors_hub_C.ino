@@ -12,48 +12,11 @@
 using namespace reactesp;
 ReactESP app;
 
-static const char* firmware_tag = "bbn_sensors_hub_C";
-
 #include "NmeaXDR.h"
 #include "Nmea0183Msg.h"
-
 #include "mcu_sensors.h"
 
-// Configuration
-#define PCNT_INPUT_GPIO 8             // GPIO pin for pulse input
-#define DEBOUNCE_TIME_NS 40           // Debounce time in nanoseconds
-#define PULSES_PER_REVOLUTION 2       // Number of pulses per engine revolution (PPR)
-#define MEASUREMENT_INTERVAL_MS 250   // Measurement interval in milliseconds
-
-#include "PulseCounter.h"
-
-#define LEDC_OUTPUT_GPIO 8             // GPIO pin for pulse output
-#define LEDC_FREQUENCY 100             // Initial frequency in Hz
-
-#include "PulseGenerator.h"
-
-// Variables
-int64_t last_time = 0;
-int16_t last_count = 0;
-
-// Function to calculate RPM
-float calculate_rpm() {
-  int count = 0;
-  ESP_ERROR_CHECK(pcnt_unit_get_count(pcnt_unit, &count));
-
-  int64_t current_time = esp_timer_get_time();
-  int64_t time_elapsed = current_time - last_time; // Time elapsed in microseconds
-
-  // Calculate RPM
-  float pulses_per_second = (count - last_count) / (time_elapsed / 1000000.0);
-  float rpm = (pulses_per_second / PULSES_PER_REVOLUTION) * 60; // Convert to RPM
-
-  // Update last count and time
-  last_count = count;
-  last_time = current_time;
-
-  return rpm;
-}
+static const char* firmware_tag = "bbn_sensors_hub_C";
 
 void setup() {
   auto cfg = M5.config();
@@ -62,39 +25,10 @@ void setup() {
   Serial.begin(38400);
   gen_nmea0183_msg("$BBTXT,01,01,01,FirmwareTag: %s", firmware_tag);
   mcu_sensors_scan();
-    
-  // Initialize PCNT
-  pcnt_init();
-
-  // Initialize LEDC (PWM)
-  ledc_init();
-
-  //pinMode(PCNT_INPUT_GPIO, INPUT);
-  //pinMode(LEDC_OUTPUT_GPIO, OUTPUT);
-
-  last_time = esp_timer_get_time();
 }
 
 void loop() {
   M5.update();
   app.tick();
   mcu_sensors_update();
-  
-  // Delay for the measurement interval
-  vTaskDelay(pdMS_TO_TICKS(MEASUREMENT_INTERVAL_MS));
-
-  // Calculate and print the RPM
-  float rpm = calculate_rpm();
-  if (rpm >= 0) {
-    printf("Measured RPM: %.2f\n", rpm);
-
-    // Get the generated frequency from LEDC
-    uint32_t generated_freq = ledc_get_freq(LEDC_MODE, LEDC_TIMER);
-    float generated_rpm = (generated_freq / PULSES_PER_REVOLUTION) * 60; // Convert to RPM
-    printf("Generated RPM: %.2f\n", generated_rpm);
-
-    // Compare generated and measured RPM
-    float error = fabs(generated_rpm - rpm);
-    printf("Error: %.2f RPM\n", error);
-  }
 }
