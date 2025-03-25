@@ -19,14 +19,14 @@ QMP6988 i2c_qmp6988_sensor;
 
 uint8_t i2c_qmp6988_whoami() {
   // Read the Chip ID register
-  Wire.beginTransmission(QMP6988_SLAVE_ADDRESS_L);
-  Wire.write(QMP6988_CHIP_ID_REG); 
-  Wire.endTransmission(false); // Send a repeated start condition
+  Wire1.beginTransmission(QMP6988_SLAVE_ADDRESS_L);
+  Wire1.write(QMP6988_CHIP_ID_REG); 
+  Wire1.endTransmission(false); // Send a repeated start condition
 
   // Request 1 byte of data from the sensor
-  Wire.requestFrom(QMP6988_SLAVE_ADDRESS_L, 1);
-  if (Wire.available()) {
-    return Wire.read(); // Read the Chip ID value
+  Wire1.requestFrom(QMP6988_SLAVE_ADDRESS_L, 1);
+  if (Wire1.available()) {
+    return Wire1.read(); // Read the Chip ID value
   }
   return 0xFF; // unknown
 }
