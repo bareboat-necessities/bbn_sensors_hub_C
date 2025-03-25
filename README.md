@@ -24,5 +24,5 @@ $BBXDR,T,1998.1,R,RPM*11
 $BBXDR,G,327.5,O,Ohms_esp32*6A
 ````
 
-## Other BBN Projets
+## Other BBN Devices
 
