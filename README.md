@@ -12,5 +12,17 @@ NMEA 0183 XDR sensors on esp32. Engine
 
 ## Loading Firmware
 
+## Example Output
+
+````
+$BBTXT,01,01,01,FirmwareTag: bbn_sensors_hub_C*48
+$BBXDR,T,1999.8,R,RPM*19
+$BBXDR,S,1,,OPEN_FLAME*24
+$BBXDR,T,2000.1,R,RPM*1A
+$BBXDR,C,21.50,C,THERMOCOUPLE*6F
+$BBXDR,T,1998.1,R,RPM*11
+$BBXDR,G,327.5,O,Ohms_esp32*6A
+````
+
 ## Other BBN Projets
 
