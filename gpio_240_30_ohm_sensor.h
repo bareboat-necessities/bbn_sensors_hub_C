@@ -16,7 +16,7 @@ void gpio_240_30_ohm_report() {
 void gpio_240_30_ohm_try_init() {
   // for 240-30 Ohm sensors (USA standard). Good for 0-180 Ohm too (EU Standard).
   ResistanceSensor_init(&resistanceSens, Resistance_Sensor_GPIO_PIN, DOWNSTREAM, 3.3, 100.0);
-  app.onRepeat(5000, []() {
+  app.onRepeat(1000, []() {
     gpio_240_30_ohm_report();
   });
 }
