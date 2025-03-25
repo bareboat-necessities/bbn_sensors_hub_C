@@ -12,6 +12,28 @@ NMEA 0183 XDR sensors on esp32. Engine
 
 ## Loading Firmware
 
+### On Bareboat Necessities (BBN) OS (full)
+
+````
+# shutdown signalk
+sudo systemctl stop signalk
+
+if [ -f bbn-flash-sensors-hub-C.sh ]; then rm bbn-flash-sensors-hub-C.sh; fi
+wget https://raw.githubusercontent.com/bareboat-necessities/my-bareboat/refs/heads/master/m5stack-tools/bbn-flash-sensors-hub-C.sh
+chmod +x bbn-flash-sensors-hub-C.sh
+./bbn-flash-sensors-hub-C.sh -p /dev/ttyACM1
+````
+
+### Reading Serial Port
+
+on USB-C port with baud rate 38400
+
+````
+stty -F /dev/ttyACM1 38400
+socat stdio /dev/ttyACM1
+````
+
+
 ## Example Output
 
 ````
@@ -23,6 +45,8 @@ $BBXDR,C,21.50,C,THERMOCOUPLE*6F
 $BBXDR,T,1998.1,R,RPM*11
 $BBXDR,G,327.5,O,Ohms_esp32*6A
 ````
+
+
 
 ## Other BBN Devices
 
