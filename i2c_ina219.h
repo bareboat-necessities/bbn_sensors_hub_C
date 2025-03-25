@@ -8,18 +8,12 @@
 
 #define INA219_I2C_ADDRESS_0 (0x40)
 #define INA219_I2C_ADDRESS_1 (0x41)   // Bridge A0 (on addresses pad)
-#define INA219_I2C_ADDRESS_2 (0x44)   // Bridge A1 (on addresses pad)
-#define INA219_I2C_ADDRESS_3 (0x45)   // Bridge A0 and A1 (on addresses pad)
 
 Adafruit_INA219 ina219_0(INA219_I2C_ADDRESS_0);
 Adafruit_INA219 ina219_1(INA219_I2C_ADDRESS_1);
-Adafruit_INA219 ina219_2(INA219_I2C_ADDRESS_2);
-Adafruit_INA219 ina219_3(INA219_I2C_ADDRESS_3);
 
 Adafruit_INA219 ina219_alt_0(INA219_I2C_ADDRESS_0);
 Adafruit_INA219 ina219_alt_1(INA219_I2C_ADDRESS_1);
-Adafruit_INA219 ina219_alt_2(INA219_I2C_ADDRESS_2);
-Adafruit_INA219 ina219_alt_3(INA219_I2C_ADDRESS_3);
 
 uint8_t ina219_addr[] = {INA219_I2C_ADDRESS_0, INA219_I2C_ADDRESS_1, INA219_I2C_ADDRESS_2, INA219_I2C_ADDRESS_3};
 
@@ -92,17 +86,9 @@ bool i2c_ina219_try_init(TwoWire *wire) {
   if (wire == &Wire1) {
     found |= i2c_ina219_begin(&ina219_alt_0, &Wire1);
     found |= i2c_ina219_begin(&ina219_alt_1, &Wire1);
-    if (!sht30_found) {
-      found |= i2c_ina219_begin(&ina219_alt_2, &Wire1);
-      found |= i2c_ina219_begin(&ina219_alt_3, &Wire1);
-    }
   } else {
     found |= i2c_ina219_begin(&ina219_0, &Wire); // conflicts with M5Stack Encoder Unit on 0x40 on i2c0
     found |= i2c_ina219_begin(&ina219_1, &Wire);
-    if (!sht30_found) {
-      found |= i2c_ina219_begin(&ina219_2, &Wire);
-      found |= i2c_ina219_begin(&ina219_3, &Wire);
-    }
   }
   return found;
 }
