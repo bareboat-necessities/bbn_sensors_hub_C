@@ -15,7 +15,7 @@ Adafruit_INA219 ina219_1(INA219_I2C_ADDRESS_1);
 Adafruit_INA219 ina219_alt_0(INA219_I2C_ADDRESS_0);
 Adafruit_INA219 ina219_alt_1(INA219_I2C_ADDRESS_1);
 
-uint8_t ina219_addr[] = {INA219_I2C_ADDRESS_0, INA219_I2C_ADDRESS_1, INA219_I2C_ADDRESS_2, INA219_I2C_ADDRESS_3};
+uint8_t ina219_addr[] = {INA219_I2C_ADDRESS_0, INA219_I2C_ADDRESS_1};
 
 void i2c_ina219_report(Adafruit_INA219 *ina219, int bus, int index) {
   // Read voltage and current from INA219.
