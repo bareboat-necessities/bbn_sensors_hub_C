@@ -1,12 +1,6 @@
 #include <M5Unified.h>
 #include <Arduino.h>
 #include <Wire.h>
-#include <stdio.h>
-#include <driver/gpio.h>
-#include <esp_timer.h>
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
-
 #include <ReactESP.h>  // https://github.com/mairas/ReactESP
 
 using namespace reactesp;
