@@ -24,7 +24,7 @@ enum ResistanceConfiguration {
 };
 
 struct ResistanceSensor {
-  int adc_voltage_pin = G2;
+  int adc_voltage_pin = G1;
   ResistanceConfiguration voltage_divider_type = DOWNSTREAM;
   double reference_voltage = 5.0;     // in volts (using m5stack VCC)
   double reference_resistance = 400;  // in Ohms
