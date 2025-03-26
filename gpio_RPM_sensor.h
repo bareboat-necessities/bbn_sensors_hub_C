@@ -14,7 +14,7 @@
 #define PULSES_PER_REVOLUTION 3       // Number of pulses per engine revolution (PPR)
 #define MEASUREMENT_INTERVAL_MS 500   // Measurement interval in milliseconds
 
-#define LEDC_OUTPUT_GPIO 1            // GPIO pin for pulse output
+#define LEDC_OUTPUT_GPIO 2            // GPIO pin for pulse output
 #define LEDC_FREQUENCY 100            // Initial frequency in Hz
 
 const bool gen_test_pulses = false;
