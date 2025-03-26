@@ -27,7 +27,7 @@ struct ResistanceSensor {
   int adc_voltage_pin = G1;
   ResistanceConfiguration voltage_divider_type = DOWNSTREAM;
   double reference_voltage = 5.0;     // in volts (using m5stack VCC)
-  double reference_resistance = 400;  // in Ohms
+  double reference_resistance = 390;  // in Ohms
   double volt = 0.0;                  // in Volts
   double measured_resistance = 0.0;   // in Ohms
 };
