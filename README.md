@@ -18,6 +18,17 @@ NMEA 0183 XDR sensors on esp32. Engine
 <img src="./img/bbn_engine_sensors_6.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic4" />
 </p>
 
+### Enclosure, etc
+
+- Waterproof box. Hinged with stainless steel hardware, transparent lid, base plate and legs
+- Various cable glands
+- Grove cables from m5stack
+- M3 standoffs
+- __In-Sure lever wire connectors__ for splicing wires (3-Port): https://www.idealind.com/us/en/category/product.html/In_Sure_Lever_3_Port.html
+- Cable ties
+- __Grove2Dupont Conversion Cables__: https://shop.m5stack.com/products/grove2dupont-conversion-cable-20cm-5pairs
+- USB-C to USB-A cables with small support tang on USB-C end
+- 
 ## Hardware
 
 ### MAX6675 thermocouple sensor
