@@ -47,11 +47,6 @@ CS = 6
 
 CLK = 7
 
-Generates NMEA-0183 XDR sentences (USB Serial) like this:
-
-````
-$BBXDR,C,26.75,C,THERMOCOUPLE*6F
-````
 
 ### Engine RPM from Alternator terminal W (waveform)
 
