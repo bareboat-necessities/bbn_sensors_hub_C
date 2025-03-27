@@ -48,13 +48,13 @@ Long press side button on atomS3 till you see green to enter the mode for upload
 
 NOTE: /dev/ttyACM1 in the script below is for example. In your case device name might be different. You can find out what it is by inspecting differences in output of
 
-```console
+```bash
 ls -ltr /dev/tty*
 ```
 
 with the device unplugged from USB and plugged into USB.
 
-```console
+```bash
 # shutdown signalk
 sudo systemctl stop signalk
 
@@ -68,7 +68,7 @@ chmod +x bbn-flash-sensors-hub-C.sh
 
 on USB-C port with baud rate 38400
 
-```console
+```bash
 stty -F /dev/ttyACM1 38400
 socat stdio /dev/ttyACM1
 ```
