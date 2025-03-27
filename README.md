@@ -65,6 +65,10 @@ Output to esp32:
 - Board 3-pin output terminal VCC to esp32 VCC
 - Board 3-pin output terminal OUT to analog input pin on esp32 (browse the code to see the pin assignement)
 
+The optocoupler converts sine wave form signal from alternator to digital impulses,
+and this firmware uses esp32 built-in pulse counter to count pulses and determine engine RPM.
+Debouncing logic is applied by built-in esp32 pulse counter to avoid counting noise as pulses.
+
 ## Loading Firmware
 
 ### On Bareboat Necessities (BBN) OS (full)
