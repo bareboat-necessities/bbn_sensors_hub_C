@@ -32,7 +32,7 @@ NMEA 0183 XDR sensors on esp32. Engine
 ## Hardware
 
 - M5Stack __AtomS3-lite__ esp32
-- __MAX6675__ thermocouple sensor: https://www.amazon.com/HiLetgo-MAX6675-Thermocouple-Temperature-Arduino/dp/B01HT871SO
+- __MAX6675__ thermocouple sensor (break out board and K-type sensor probe): https://www.amazon.com/HiLetgo-MAX6675-Thermocouple-Temperature-Arduino/dp/B01HT871SO
 - Optocoupler (for your alternator voltage range)
 - M5stack __portABC Unit__
 - Resistor 100 Ohm
