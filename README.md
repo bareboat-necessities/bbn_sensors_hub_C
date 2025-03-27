@@ -19,7 +19,7 @@ CS = 6
 
 CLK = 7
 
-Generates NMEA-0183 XDR sentences (USB Serial with baud rate 4800) like this:
+Generates NMEA-0183 XDR sentences (USB Serial) like this:
 
 ````
 $BBXDR,C,26.75,C,THERMOCOUPLE*6F
