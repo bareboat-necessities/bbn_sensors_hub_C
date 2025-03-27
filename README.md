@@ -44,6 +44,16 @@ https://www.adafruit.com/product/4101
 
 ### On Bareboat Necessities (BBN) OS (full)
 
+Long press side button on atomS3 till you see green to enter the mode for uploading firmware.
+
+NOTE: /dev/ttyACM1 in the script below is for example. In your case device name might be different. You can find out what it is by inspecting differences in output of
+
+````
+ls -ltr /dev/tty*
+````
+
+with the device unplugged from USB and plugged into USB.
+
 ````
 # shutdown signalk
 sudo systemctl stop signalk
