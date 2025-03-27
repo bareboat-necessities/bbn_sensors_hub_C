@@ -53,6 +53,19 @@ Generates NMEA-0183 XDR sentences (USB Serial) like this:
 $BBXDR,C,26.75,C,THERMOCOUPLE*6F
 ````
 
+### Engine RPM from Alternator terminal W (waveform)
+
+Input from alternator connected to optocoupler:
+
+- Alternator ground to Board '-' INPUT on 2-pin terminal
+- Alternator 'W' to Board '+' INPUT on 2-pin terminal
+
+Output to esp32:
+
+- Board 3-pin output terminal GND to esp32 GND
+- Board 3-pin output terminal VCC to esp32 +3.3v VCC
+- Board 3-pin output terminal OUT to some analog input pin on esp32
+
 #### Use cases
 
 - Higher Temperature Ranges
