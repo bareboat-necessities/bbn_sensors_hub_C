@@ -10,11 +10,11 @@ NMEA 0183 XDR sensors on esp32. Engine
 
 <p align="center">
 <img src="./img/bbn_engine_sensors_3.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic3" />
-<img src="./img/bbn_engine_sensors_4.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic2" />
+<img src="./img/bbn_engine_sensors_5.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic5" />
 </p>
 
 <p align="center">
-<img src="./img/bbn_engine_sensors_5.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic5" />
+<img src="./img/bbn_engine_sensors_4.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic2" />
 <img src="./img/bbn_engine_sensors_6.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic4" />
 </p>
 
