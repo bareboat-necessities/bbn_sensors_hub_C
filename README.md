@@ -47,6 +47,10 @@ CS = 6
 
 CLK = 7
 
+#### Use cases
+
+- Higher Temperature Ranges
+- Exhaust gas temperature
 
 ### Engine RPM from Alternator terminal W (waveform)
 
@@ -60,11 +64,6 @@ Output to esp32:
 - Board 3-pin output terminal GND to esp32 GND
 - Board 3-pin output terminal VCC to esp32 +3.3v VCC
 - Board 3-pin output terminal OUT to some analog input pin on esp32
-
-#### Use cases
-
-- Higher Temperature Ranges
-- Exhaust gas temperature
 
 ## Loading Firmware
 
