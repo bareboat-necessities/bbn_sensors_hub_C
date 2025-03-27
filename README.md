@@ -28,8 +28,14 @@ NMEA 0183 XDR sensors on esp32. Engine
 - Cable ties
 - __Grove2Dupont Conversion Cables__: https://shop.m5stack.com/products/grove2dupont-conversion-cable-20cm-5pairs
 - USB-C to USB-A cables with small support tang on USB-C end
-- 
+
 ## Hardware
+
+- M5Stack _AtomS3-lite_ esp32
+- _MAX6675_ thermocouple sensor: https://www.amazon.com/HiLetgo-MAX6675-Thermocouple-Temperature-Arduino/dp/B01HT871SO
+- Optocoupler (for your alternator voltage range)
+- M5stack _portABC Unit_
+- Resistor 100 Ohm
 
 ### MAX6675 thermocouple sensor
 
