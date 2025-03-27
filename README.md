@@ -7,7 +7,6 @@ NMEA 0183 XDR sensors on esp32. Engine
 - IR Open Flame sensor
 - i2c connector for more external i2c sensors supported by the Hub C firmware
 
-
 <p align="center">
 <img src="./img/bbn_engine_sensors_3.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic3" />
 <img src="./img/bbn_engine_sensors_5.jpg?raw=true" style="width: 40%; height: auto;" alt="BBN HubAB pic5" />
@@ -59,7 +58,6 @@ $BBXDR,C,26.75,C,THERMOCOUPLE*6F
 - Higher Temperature Ranges
 - Exhaust gas temperature
 
-
 ## Loading Firmware
 
 ### On Bareboat Necessities (BBN) OS (full)
@@ -93,7 +91,6 @@ stty -F /dev/ttyACM1 38400
 socat stdio /dev/ttyACM1
 ```
 
-
 ## Example Output
 
 ````
@@ -106,12 +103,9 @@ $BBXDR,T,1998.1,R,RPM*11
 $BBXDR,G,327.5,O,Ohms_esp32*6A
 ````
 
-
-
 ## Other Bareboat Necessities Devices
 
 Project Home:  https://bareboat-necessities.github.io/
-
 
 - Alarms Box: https://github.com/bareboat-necessities/bbn_alarms_A
 - Sensors Hub: https://github.com/bareboat-necessities/bbn_sensors_hub_AB
