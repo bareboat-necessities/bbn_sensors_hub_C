@@ -122,8 +122,7 @@ esp32 ADC is not the best:
 - ADCs in the esp32 have an attenuator stage at their inputs; the suggested range for 11Db attenuation is 2600mV at best (even though the ADC's range is 0-3.3v)
 - However, the output can be made accurate to within 1% on input range of 0.14 to 2.6 volts
 
-
-#### For precise measurements use external ADC
+For precise measurements use external ADC
 
 Examples:
 - ADS1115  https://docs.m5stack.com/en/unit/vmeter
@@ -132,7 +131,7 @@ Examples:
 #### Getting 3.3v from m5stack
 
 You solder a wire to +3.3v pad of m5stack portABC. That wire passes under m5atom connected to portABC via
-specially designed gap.
+specially designed gap. Connect 100 Ohm resistor to it.
 
 #### Resistive boat sensors
 
@@ -148,34 +147,7 @@ Examples:
 - Trim
 - Resistive Temperature Sensors
 
-Constraints for selecting a reference resistor size for these types of sensors:
-
-$$
-\begin{flalign}
-& V _{ref} = 3.3 \newline &
-8 \lt  R _{sensor} \lt 240  \newline &
-0.14 \lt  V _{meas} \lt 2.6 &
-\end{flalign}
-$$
-
-Appropriate sizes are (in Ohms):
-
-$$
-\begin{flalign}
-& \text{ Upstream: } \newline &
-15  \lt  R _{ref} \lt 33 &
-\end{flalign}
-$$
-
-$$
-\begin{flalign}
-& \text{ Downstream: } \newline &
-68  \lt  R _{ref} \lt 220 &
-\end{flalign}
-$$
-
-Pick up resistor with lower % tolerance.
-
+Pick up (100 Ohm) resistor with lower % tolerance.
 
 
 ## Loading Firmware
