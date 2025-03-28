@@ -153,6 +153,8 @@ Pick (100 Ohm) resistor with lower % tolerance.
 
 Browse the source code for pin assignement.
 
+Brings the pin LOW if open flame is detected.
+
 ## Loading Firmware
 
 ### On Bareboat Necessities (BBN) OS (full)
