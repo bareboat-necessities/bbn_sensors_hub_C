@@ -147,8 +147,11 @@ Examples:
 - Trim
 - Resistive Temperature Sensors
 
-Pick up (100 Ohm) resistor with lower % tolerance.
+Pick (100 Ohm) resistor with lower % tolerance.
 
+### Open Flame IR Sensor
+
+Browse the source code for pin assignement.
 
 ## Loading Firmware
 
