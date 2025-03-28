@@ -155,6 +155,10 @@ Browse the source code for pin assignement.
 
 Brings the pin LOW if open flame is detected.
 
+### External I2C Sensors
+
+The firmware supports variety of external i2c sensors. Browse the code to see which ones.
+
 ## Loading Firmware
 
 ### On Bareboat Necessities (BBN) OS (full)
