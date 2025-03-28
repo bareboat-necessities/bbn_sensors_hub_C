@@ -195,6 +195,17 @@ $BBXDR,T,1998.1,R,RPM*11
 $BBXDR,G,327.5,O,Ohms_esp32*6A
 ````
 
+## Integration with SignalK
+
+Integration with SignalK is done via NMEA XDR Parser SignalK plugin.
+
+More: https://github.com/GaryWSmith/xdr-parser-plugin
+
+Recommended config file for XDR Parser SignalK plugin:
+
+https://github.com/bareboat-necessities/lysmarine_gen/blob/bookworm/install-scripts/4-server/files/xdrParser-plugin.json
+
+
 ## Other Bareboat Necessities Devices
 
 Project Home:  https://bareboat-necessities.github.io/
