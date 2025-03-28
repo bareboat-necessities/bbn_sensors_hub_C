@@ -8,7 +8,7 @@ NMEA 0183 XDR sensors on esp32. Engine
 - i2c connector for more external i2c sensors supported by the Hub C firmware
 
 <p align="center">
-<img src="./img/bbn_engine_hubC_1.jpg?raw=true" style="width: 75%; height: auto;" alt="BBN HubAB pic1" />
+<img src="./img/bbn_engine_hubC_2.jpg?raw=true" style="width: 75%; height: auto;" alt="BBN HubAB pic1" />
 </p>
 
 <p align="center">
