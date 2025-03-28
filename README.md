@@ -64,7 +64,7 @@ Input from alternator connected to optocoupler:
 - Alternator 'W' to Board '+' INPUT on 2-pin terminal
 
 Some people also add a circuit with 
-zener diod in between optocoupler input and alternator to cut off higher voltages for better protection. 
+Zener diode in between optocoupler input and alternator to cut off higher voltages for better protection. 
 
 Output to esp32:
 
