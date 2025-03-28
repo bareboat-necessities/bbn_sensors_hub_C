@@ -69,7 +69,7 @@ The optocoupler converts sine wave form signal from alternator to digital impuls
 and this firmware uses esp32 built-in pulse counter to count pulses and determine engine RPM.
 Debouncing logic is applied by built-in esp32 pulse counter to avoid counting noise as pulses.
 
-### Resistance sensor with M5Stack AtomS3-Lite
+### Oil pressure, Fuel Level, Rudder Position, Trim resistive sensor
 
 In order to measure the resistance you can measure voltage using ADC (analog) input esp32 pin on a voltage divider circuit.
 
