@@ -37,7 +37,7 @@ NMEA 0183 XDR sensors on esp32. Engine
 - Resistor __100 Ohm__
 - __Open Flame IR Sensor__ (3-pin, 760nm-1100nm wavelength detection): https://www.amazon.com/Detection-Infrared-Receiver-Control-760nm-1100nm/dp/B09135QZMQ
 
-### MAX6675 thermocouple sensor
+### MAX6675 thermocouple sensor (Exhaust temperature)
 
 Connected to M5Stack AtomS3-Lite via GPIO pins:
 
