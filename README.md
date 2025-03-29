@@ -76,6 +76,20 @@ The optocoupler converts sine wave form signal from alternator to digital impuls
 and this firmware uses esp32 built-in pulse counter to count pulses and determine engine RPM.
 Debouncing logic is applied by built-in esp32 pulse counter to avoid counting noise as pulses.
 
+#### Converting into your engine RPM
+
+Let's say your engine RPM gauge goes to 5000 RPM and alternalor has N-poles. And "transfer number" on an alternator belt (makes alernator RPM differ from engine RPM). 
+The ratio between alternator RPM and engine RPM is usually 2.5 to 1. For example, if engine is rotating at 1000RPM and ratio is 2.5 then the alternator spins at 2500 RPM. 
+Then the frequency of alternator signal can be up to
+
+5000 * N * R / 60 Hz
+
+Let's say there are 12 poles on alternator N = 12, R = 1.
+
+5000 * 12 / 60 = 1000 Hz
+
+1/1000Hz = 0.001 sec = 1 millisecond
+
 ### Oil pressure, Fuel Level, Rudder Position, Trim resistive sensor
 
 In order to measure the resistance you can measure voltage using ADC (analog) input esp32 pin on a voltage divider circuit.
