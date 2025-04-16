@@ -23,7 +23,7 @@ NMEA 0183 XDR sensors on esp32. Engine
 
 ### Enclosure, etc
 
-- Waterproof box. Hinged with stainless steel hardware, transparent lid, base plate and legs
+- Waterproof IP67 box 4.7"x3.5"x2.7" or bigger. Hinged with stainless steel hardware, transparent lid, base plate and legs
 - Various cable glands
 - Grove cables from m5stack
 - M3 standoffs
